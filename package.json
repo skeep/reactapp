@@ -1,0 +1,23 @@
+{
+  "name": "reactapp",
+  "version": "0.0.1",
+  "description": "React App Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skeep/reactapp.git"
+  },
+  "author": "Suman Paul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skeep/reactapp/issues"
+  },
+  "homepage": "https://github.com/skeep/reactapp#readme",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}
