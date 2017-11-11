@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly content 1 1`] = `
+<p>
+  content 1
+</p>
+`;
+
+exports[`renders correctly content 2 1`] = `
+<p>
+  content 2
+</p>
+`;
