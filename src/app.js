@@ -9,6 +9,7 @@ export default class Hello extends Component {
       <div>
         Hello from react
         <P content="hi"/>
+        <P/>
       </div>
     );
   }
