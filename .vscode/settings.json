@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "*.js": ["flow", "javascript"]
+    "*.js": ["flow", "javascript"],
+    "*.js.snap": ["javascript"]
   },
   "javascript.validate.enable": false
 }

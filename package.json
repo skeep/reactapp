@@ -23,6 +23,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-react-flow-props-to-prop-types": "^0.15.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
@@ -35,6 +36,8 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
+    "prop-types-extra": "^1.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
