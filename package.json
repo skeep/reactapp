@@ -9,6 +9,9 @@
     "build": "webpack",
     "flow": "flow"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "src/internal/test.setup.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skeep/reactapp.git"
@@ -27,9 +30,13 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
+    "enzyme-to-json": "^3.2.2",
     "flow-bin": "^0.59.0",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.1",
+    "raf": "^3.4.0",
     "react-test-renderer": "^16.1.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
