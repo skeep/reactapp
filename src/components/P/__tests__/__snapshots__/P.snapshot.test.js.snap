@@ -5,9 +5,3 @@ exports[`renders correctly content 1 1`] = `
   content 1
 </p>
 `;
-
-exports[`renders correctly content 2 1`] = `
-<p>
-  content 2
-</p>
-`;

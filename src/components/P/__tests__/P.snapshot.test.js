@@ -4,16 +4,24 @@ import toJson from 'enzyme-to-json';
 
 import P from '../index.js';
 
-it('renders correctly content 1', () => {
+// Snapshot test
+it('Snapshot test', () => {
   const tree = shallow(
     <P content="content 1" />
   );
   expect(toJson(tree)).toMatchSnapshot();
 });
 
-it('renders correctly content 2', () => {
+// Rendering test
+it('Rendering test', ()=>{
   const tree = shallow(
     <P content="content 2" />
   );
-  expect(toJson(tree)).toMatchSnapshot();
+  expect(tree.find('p').text()).toEqual('content 2');
 });
+
+// Behaviour tests
+
+// Integration tests
+
+// System tests
