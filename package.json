@@ -9,9 +9,6 @@
     "build": "webpack",
     "flow": "flow"
   },
-  "jest": {
-    "setupTestFrameworkScriptFile": "src/internal/test.setup.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skeep/reactapp.git"

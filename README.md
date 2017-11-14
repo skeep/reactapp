@@ -5,6 +5,7 @@
 - [x] .vscode config
 
 ## Development
+- [x] Webpack
 - [x] Hot Reloading
 - [x] UglifyJS
 - [x] Babel
@@ -18,11 +19,22 @@
 - [x] Enzyme
 - [x] Enzyme React 16 Adapter
 - [x] Code Coverage
+- [ ] Documentation
 
 ### Example
+#### Test type
 - [x] Snapshot test
 - [x] Rendering Test
+- [ ] Behaviour Test
+- [ ] Integration Test
+- [ ] System Test
+
+#### Component type
 - [x] Pure Component
- 
-## Build
-- [x] Webpack
+- [ ] Container Component
+- [ ] Container / View Pattern
+- [ ] Container / Branch / View Pattern
+- [ ] HOC
+- [ ] Branching Higher Order Components
+- [ ] Render Props
+- [ ] Provider Pattern

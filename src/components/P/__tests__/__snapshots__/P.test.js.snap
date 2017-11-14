@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test with content 1`] = `
+<p>
+  content 1
+</p>
+`;
+
+exports[`Snapshot test without content prop 1`] = `
+<p>
+  This is default content of a paragraph tag
+</p>
+`;
