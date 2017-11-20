@@ -7,7 +7,7 @@ import P from '../index.js';
 // Snapshot test
 it('Snapshot test with content', () => {
   const tree = shallow(
-    <P content="content 1" />
+    <P content='content 1' />
   );
   expect(toJson(tree)).toMatchSnapshot();
 });
@@ -22,7 +22,7 @@ it('Snapshot test without content prop', () => {
 // Rendering test
 it('Rendering test with content', ()=>{
   const tree = shallow(
-    <P content="content 2" />
+    <P content='content 2' />
   );
   expect(tree.find('p').text()).toEqual('content 2');
 });
