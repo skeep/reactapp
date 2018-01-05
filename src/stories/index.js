@@ -1,1 +1,1 @@
-require('./P.stories');
+require('./P.stories')

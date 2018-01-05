@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 
-import P from './components/P';
+import P from './components/P'
 
 export default class App extends Component {
-  render() {
+  render () {
     return (
       <div>
         Hello from react
-        <P content="hi"/>
-        <P/>
+        <P content='hi' />
+        <P />
       </div>
-    );
+    )
   }
 }
 
-render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById('app'))
