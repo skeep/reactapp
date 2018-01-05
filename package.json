@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server",
     "build": "webpack",
     "flow": "flow",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/skeep/reactapp#readme",
   "devDependencies": {
+    "@storybook/react": "^3.3.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
