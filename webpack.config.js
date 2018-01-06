@@ -36,7 +36,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias: {
+      'Components': path.resolve(__dirname, 'src/components/')
+    }
   },
   devServer: {
     contentBase: paths.SRC

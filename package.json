@@ -12,8 +12,7 @@
     "stdf": "standard --fix",
     "format": "prettier-standard 'src/**/*.js'",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "prepush": "npm test",
-    "precommit": "lint-staged"
+    "prepush": "npm test"
   },
   "repository": {
     "type": "git",

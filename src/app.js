@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
-import P from './components/P'
+import { P } from 'Components'
 
 export default class App extends Component {
   render () {

@@ -1,6 +1,6 @@
 {
   "presets": ["env", "react", "flow"],
   "plugins": [
-    ["react-flow-props-to-prop-types", { /* options */ }]
+    ["react-flow-props-to-prop-types", {}]
   ]
 }
