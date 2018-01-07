@@ -2,21 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-import { Home } from 'Containers'
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
-
-const NoMatch = ({ location }) => (
-  <div>
-    <h3>
-      No match for <code>{location.pathname}</code>
-    </h3>
-  </div>
-)
+import { Home, About, NotFound } from 'Containers'
 
 const Routes = () => (
   <Router>
@@ -37,7 +23,7 @@ const Routes = () => (
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
-        <Route component={NoMatch} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   </Router>
