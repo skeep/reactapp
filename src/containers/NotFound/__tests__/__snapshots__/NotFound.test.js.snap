@@ -2,6 +2,14 @@
 
 exports[`Snapshot test with content 1`] = `
 <div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Not Found 404
+    </title>
+  </HelmetWrapper>
   <h2>
     Not Found
   </h2>
