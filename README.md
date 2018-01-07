@@ -11,6 +11,13 @@
 - [x] Babel
 - [x] Static Type Checking using Flow
 - [x] Automtic Runtime Type Check generation
+- [x] Container & Component resolve
+- [x] historyApiFallback for webpack dev server
+- [x] babel-polyfill for async-await
+- [x] Dynamic import
+- [x] Code splitting
+- [x] React loadable
+- [x] react helmet
 
 ## Test
 ### Tools
@@ -19,6 +26,7 @@
 - [x] Enzyme
 - [x] Enzyme React 16 Adapter
 - [x] Code Coverage
+- [x] Storybook
 - [ ] Documentation
 
 ### Example
