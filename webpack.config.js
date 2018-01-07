@@ -43,6 +43,7 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: paths.SRC
+    contentBase: paths.SRC,
+    historyApiFallback: true
   }
 }

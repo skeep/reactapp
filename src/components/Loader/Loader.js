@@ -1,12 +1,20 @@
+// @flow
+
 import React from 'react'
 
-const Loader = ({ isLoading, error }) => {
-  // Handle the loading state
-  if (isLoading) {
+type Props = {
+  error: Error,
+  timedOut: boolean,
+  pastDelay: boolean
+}
+
+const Loader = (props: Props): any => {
+  if (props.error) {
+    return <div>Error!</div>
+  } else if (props.timedOut) {
+    return <div>Taking a long time...</div>
+  } else if (props.pastDelay) {
     return <div>Loading...</div>
-  } else if (error) {
-    // Handle the error state
-    return <div>Sorry, there was a problem loading the page.</div>
   } else {
     return null
   }
