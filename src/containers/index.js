@@ -1,3 +1,7 @@
-export { default as Home } from './Home/Home'
-export { default as About } from './About/About'
-export { default as NotFound } from './NotFound/NotFound'
+import asyncComponent from '../components/AsyncComponent/AsyncComponent'
+
+const AsyncHome = asyncComponent(() => import('./Home/Home'))
+const AsyncAbout = asyncComponent(() => import('./About/About'))
+const AsyncNotFound = asyncComponent(() => import('./NotFound/NotFound'))
+
+export { AsyncHome as Home, AsyncAbout as About, AsyncNotFound as NotFound }

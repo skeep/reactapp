@@ -2,6 +2,7 @@
   "presets": ["env", "react", "flow"],
   "plugins": [
     "transform-react-jsx-source",
+    "syntax-dynamic-import",
     ["react-flow-props-to-prop-types", {}]
   ]
 }
