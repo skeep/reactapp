@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 const Home = () => (
   <div>
@@ -14,6 +14,14 @@ const About = () => (
   </div>
 )
 
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>
+      No match for <code>{location.pathname}</code>
+    </h3>
+  </div>
+)
+
 const Routes = () => (
   <Router>
     <div>
@@ -24,12 +32,17 @@ const Routes = () => (
         <li>
           <Link to='/about'>About</Link>
         </li>
+        <li>
+          <Link to='/404'>404</Link>
+        </li>
       </ul>
 
       <hr />
-
-      <Route exact path='/' component={Home} />
-      <Route path='/about' component={About} />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route component={NoMatch} />
+      </Switch>
     </div>
   </Router>
 )
