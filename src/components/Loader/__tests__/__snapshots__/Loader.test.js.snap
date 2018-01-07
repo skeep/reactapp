@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test pastDelay 1`] = `
+<div>
+  Loading...
+</div>
+`;
+
+exports[`Snapshot test timedOut 1`] = `
+<div>
+  Taking a long time...
+</div>
+`;
+
+exports[`Snapshot test with content 1`] = `""`;
