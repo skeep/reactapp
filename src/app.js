@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
+import { Home } from 'Containers'
 
 const About = () => (
   <div>
