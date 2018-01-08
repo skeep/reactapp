@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import { devToolsEnhancer } from 'redux-devtools-extension'
 
 import AppState from './containers/reducers'
 import Routes from './containers/routes'
 
-const store = createStore(
-  AppState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+const store = createStore(AppState, devToolsEnhancer())
 
 export default class App extends Component {
   render () {

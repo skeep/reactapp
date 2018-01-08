@@ -18,6 +18,8 @@
 - [x] Code splitting
 - [x] React loadable
 - [x] react helmet
+- [x] react-redux
+- [x] redux-devtools-extension
 
 ## Test
 ### Tools
