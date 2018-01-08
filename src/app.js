@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 
 import { Home, About, NotFound } from 'Containers'
+import AppState from './containers/reducers'
 
 const Routes = () => (
   <Router>
@@ -29,6 +32,11 @@ const Routes = () => (
   </Router>
 )
 
+const store = createStore(
+  AppState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
 export default class App extends Component {
   render () {
     return (
@@ -39,4 +47,9 @@ export default class App extends Component {
   }
 }
 
-render(<App />, document.getElementById('app'))
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+)
