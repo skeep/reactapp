@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
+import autoBind from 'react-autobind'
 import { connect } from 'react-redux'
 
 import Actions from 'Actions'
 import Selectors from 'Selectors'
 
 class Home extends Component {
+  constructor (props) {
+    super(props)
+    autoBind(this)
+  }
+
   componentDidMount () {
     this.props.dispatch(Actions.Beers.fetchBeer())
   }
