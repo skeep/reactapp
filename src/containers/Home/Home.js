@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import autoBind from 'react-autobind'
 import { connect } from 'react-redux'
+import { Helmet } from 'react-helmet'
 
 import Actions from 'Actions'
 import Selectors from 'Selectors'
@@ -19,6 +20,9 @@ class Home extends Component {
     const name = this.props.beers.data ? this.props.beers.data[0].name : ''
     return (
       <div>
+        <Helmet>
+          <title>Home</title>
+        </Helmet>
         <h2>Home : {name}</h2>
       </div>
     )
