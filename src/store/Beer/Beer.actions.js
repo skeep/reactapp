@@ -1,5 +1,5 @@
 import beerService from '../../services/beer'
-import { BEER_FETCHED } from './Beer.constants'
+import { BEER_FETCHED, BEER_FAILED } from './Beer.constants'
 
 const fetchBeer = () => {
   return async (dispatch, getState) => {
@@ -7,10 +7,15 @@ const fetchBeer = () => {
       let beer = await beerService.fetchBeer()
       dispatch({
         type: BEER_FETCHED,
-        data: beer
+        payload: beer,
+        error: false
       })
     } catch (error) {
-      console.error(error)
+      dispatch({
+        type: BEER_FAILED,
+        payload: error,
+        error: true
+      })
     }
   }
 }
