@@ -1,19 +1,33 @@
-import { Map } from 'immutable'
-import { BEER_FETCHED, BEER_FAILED } from './Beer.constants'
+import { Map, List } from 'immutable'
+import { BEER_FETCHING, BEER_FETCHED, BEER_FAILED } from './Beer.constants'
 
-const initState = Map()
+const initState = Map({
+  error: false,
+  meta: Map({
+    fetching: false,
+    message: null
+  }),
+  payload: List()
+})
 
 const BeerState = (state = initState, action) => {
   switch (action.type) {
+    case BEER_FETCHING:
+      return state.merge({
+        fetching: action.fetching,
+        message: action.message
+      })
     case BEER_FETCHED:
       return state.merge({
         data: action.payload,
-        error: false
+        fetching: action.fetching,
+        message: null
       })
     case BEER_FAILED:
       return state.merge({
-        error: true,
-        message: action.error
+        fetching: action.fetching,
+        error: action.error,
+        message: action.payload
       })
     default:
       return state
