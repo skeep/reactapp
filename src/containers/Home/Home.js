@@ -20,7 +20,8 @@ class Home extends Component {
 
   render () {
     const _beers = this.props.beers
-    const _name = _beers.payload && _beers.payload.length ? _beers.payload[0].name : null
+    const _name =
+      _beers.payload && _beers.payload.length ? _beers.payload[0].name : null
     return (
       <div>
         <Helmet>

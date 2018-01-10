@@ -6,11 +6,16 @@ type Props = {
   error: boolean,
   fetching: boolean,
   message: string,
-  payload: Array
+  payload: Array<mixed>
 }
 
 const LiveSpan = (props: Props): any => {
-  return <span>{props.payload} <span>{props.message}</span></span>
+  return (
+    <span>
+      <span>{props.payload}</span>
+      <span>{props.message}</span>
+    </span>
+  )
 }
 
 LiveSpan.defaultProps = {
