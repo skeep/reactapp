@@ -14,20 +14,26 @@ const BeerState = (state = initState, action) => {
   switch (action.type) {
     case BEER_FETCHING:
       return state.merge({
-        fetching: action.fetching,
-        message: action.message
+        meta: {
+          fetching: action.meta.fetching,
+          message: action.meta.message
+        }
       })
     case BEER_FETCHED:
       return state.merge({
-        data: action.payload,
-        fetching: action.fetching,
-        message: null
+        meta: {
+          fetching: action.meta.fetching,
+          message: null
+        },
+        payload: action.payload
       })
     case BEER_FAILED:
       return state.merge({
-        fetching: action.fetching,
-        error: action.error,
-        message: action.payload
+        meta: {
+          fetching: action.meta.fetching,
+          message: action.payload
+        },
+        error: action.error
       })
     default:
       return state

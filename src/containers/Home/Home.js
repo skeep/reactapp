@@ -17,7 +17,8 @@ class Home extends Component {
   }
 
   render () {
-    const name = this.props.beers.data.length ? this.props.beers.data[0].name : ''
+    const _beers = this.props.beers.payload
+    const name = _beers && _beers.length ? _beers[0].name : ''
     return (
       <div>
         <Helmet>
