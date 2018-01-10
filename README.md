@@ -20,6 +20,9 @@
 - [x] react helmet
 - [x] react-redux
 - [x] redux-devtools-extension
+- [ ] Offline first PWA
+- [ ] Save redux state
+
 
 ## Test
 ### Tools
