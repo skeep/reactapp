@@ -23,7 +23,7 @@ const BeerState = (state = initState, action) => {
       return state.merge({
         meta: {
           fetching: action.meta.fetching,
-          message: null
+          message: action.meta.message
         },
         payload: action.payload
       })
@@ -31,7 +31,7 @@ const BeerState = (state = initState, action) => {
       return state.merge({
         meta: {
           fetching: action.meta.fetching,
-          message: action.payload
+          message: action.payload.toString()
         },
         error: action.error
       })

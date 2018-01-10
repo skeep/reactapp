@@ -15,14 +15,14 @@ const fetchBeer = () => {
       dispatch({
         type: BEER_FETCHED,
         payload: beer,
-        meta: {fetching: false, message: null}
+        meta: { fetching: false, message: null }
       })
     } catch (error) {
       dispatch({
         type: BEER_FAILED,
         payload: error,
         error: true,
-        meta: {fetching: false, message: null}
+        meta: { fetching: false, message: null }
       })
     }
   }

@@ -6,6 +6,8 @@ import { Helmet } from 'react-helmet'
 import Actions from 'Actions'
 import Selectors from 'Selectors'
 
+import { LiveSpan } from 'Components'
+
 class Home extends Component {
   constructor (props) {
     super(props)
@@ -17,14 +19,22 @@ class Home extends Component {
   }
 
   render () {
-    const _beers = this.props.beers.payload
-    const name = _beers && _beers.length ? _beers[0].name : ''
+    const _beers = this.props.beers
+    const _name = _beers.payload && _beers.payload.length ? _beers.payload[0].name : null
     return (
       <div>
         <Helmet>
           <title>Home</title>
         </Helmet>
-        <h2>Home : {name}</h2>
+        <h2>
+          Home :{' '}
+          <LiveSpan
+            payload={_name}
+            error={_beers.error}
+            fetching={_beers.fetching}
+            message={_beers.message}
+          />
+        </h2>
       </div>
     )
   }
