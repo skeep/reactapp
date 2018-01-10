@@ -1,5 +1,25 @@
 # React App Boilerplate
 
+## NPM Commands
+
+### npm start
+Start the dev server
+
+### npm test
+Start test
+
+### npm build
+Create production build
+
+### npm run std
+Check source code with [standardjs rules](https://standardjs.com/rules.html)
+
+### npm run fmt
+Reformat source code with [standardjs rules](https://standardjs.com/rules.html)
+
+### npm run storybook
+Start [storybook](https://storybook.js.org/) server
+
 ## Editor Setting
 - [x] .editorconfig
 - [x] .vscode config
@@ -20,6 +40,7 @@
 - [x] react helmet
 - [x] react-redux
 - [x] redux-devtools-extension
+- [x] standardjs and prettier
 - [ ] Offline first PWA
 - [ ] Save redux state
 
@@ -51,3 +72,5 @@
 - [ ] Branching Higher Order Components
 - [ ] Render Props
 - [ ] Provider Pattern
+
+

@@ -10,7 +10,6 @@
     "build": "webpack",
     "flow": "flow",
     "std": "standard --verbose | snazzy",
-    "stdf": "standard --fix",
     "fmt": "prettier-standard 'src/**/*.js'",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "prepush": "npm test"
