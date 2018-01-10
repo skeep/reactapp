@@ -15,10 +15,8 @@ const LiveSpan = (props: Props): any => {
 
 LiveSpan.defaultProps = {
   error: false,
-  meta: {
-    fetching: false,
-    message: null
-  },
+  fetching: false,
+  message: null,
   payload: 'NA'
 }
 

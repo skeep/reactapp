@@ -27,12 +27,12 @@ class Home extends Component {
           <title>Home</title>
         </Helmet>
         <h2>
-          Home :{' '}
+          Home :
           <LiveSpan
             payload={_name}
             error={_beers.error}
-            fetching={_beers.fetching}
-            message={_beers.message}
+            fetching={_beers.meta.fetching}
+            message={_beers.meta.message}
           />
         </h2>
       </div>
