@@ -22,7 +22,7 @@ LiveSpan.defaultProps = {
   error: false,
   fetching: false,
   message: null,
-  payload: 'NA'
+  payload: null
 }
 
 export default LiveSpan
