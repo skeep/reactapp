@@ -8,6 +8,7 @@ import Immutable from 'immutable'
 
 import rootReducer from './store/reducers'
 import Routes from './containers/routes'
+import registerServiceWorker from './registerServiceWorker'
 
 const initialState = Immutable.Map()
 const store = createStore(
@@ -32,3 +33,4 @@ render(
   </Provider>,
   document.getElementById('app')
 )
+registerServiceWorker()

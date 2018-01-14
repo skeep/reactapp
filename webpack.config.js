@@ -1,17 +1,19 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 const paths = {
   BUILD: path.resolve(__dirname, 'build'),
-  SRC: path.resolve(__dirname, 'src')
+  SRC: path.resolve(__dirname, 'src'),
+  PUBLIC: 'https://localhost:5000/'
 }
 
 module.exports = {
   entry: ['babel-polyfill', path.join(paths.SRC, 'app.js')],
   output: {
     path: paths.BUILD,
-    filename: 'app.bundle.js'
+    filename: '[name]-[hash].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -22,12 +24,14 @@ module.exports = {
         mangle: false,
         compress: false
       }
-    })
+    }),
+    new SWPrecacheWebpackPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
+        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: [
           'babel-loader'

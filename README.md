@@ -3,10 +3,16 @@
 ## NPM Commands
 
 ### npm start
-Start the dev server
+Start the dev server at port 9000
 
 ### npm test
-Start test
+Run unit tests once and pusblish coverable report on CLI
+
+### npm test -u
+* Create missing [snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) 
+* Wpdate exising ones 
+* Run unit tests once 
+* Pusblish coverable report on CLI
 
 ### npm build
 Create production build
