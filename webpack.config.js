@@ -4,7 +4,6 @@ const merge = require('webpack-merge');
 const PATHS = require('./webpack-paths');
 const loaders = require('./webpack-loaders');
 const plugins = require('./webpack-plugins');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const baseConfig = {
 	entry: ['babel-polyfill', PATHS.app],
@@ -28,9 +27,7 @@ const baseConfig = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: PATHS.template,
-    }),
+    plugins.htmlWebpackPlugin,
     plugins.extractText,
   ],
 };

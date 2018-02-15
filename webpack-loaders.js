@@ -29,6 +29,7 @@ exports.babel = {
   test: /\.jsx?$/,
   use: ['babel-loader'],
   exclude: /node_modules/,
+  include: PATHS.src
 };
 
 exports.devServer = function() {
