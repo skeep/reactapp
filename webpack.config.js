@@ -15,7 +15,7 @@ const baseConfig = {
 	module: {
     rules: [
       loaders.babel,
-      loaders.extractCss,
+      loaders.extractCss
     ],
   },
 	resolve: {
@@ -48,7 +48,7 @@ switch (process.env.NODE_ENV) {
           plugins.uglifyJs,
           plugins.manifest,
           plugins.sw,
-          plugins.copy,
+          plugins.copy
         ],
       }
 	  );
@@ -56,16 +56,8 @@ switch (process.env.NODE_ENV) {
 	case 'dev':
 		config = merge(
 			baseConfig,
-      { 
+      {
         devtool: 'eval-source-map',
-        plugins: [
-          plugins.loaderOptions,
-          plugins.environmentVariables,
-          plugins.uglifyJs,
-          plugins.manifest,
-          plugins.sw,
-          plugins.copy,
-        ],
       },
 			loaders.devServer()
 		);
