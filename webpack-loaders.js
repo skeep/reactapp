@@ -11,7 +11,7 @@ exports.css = {
 }
 
 exports.extractCss = {
-  test:    /\.css$/,
+  test: /\.css$/,
   loader: ExtractTextPlugin.extract({
     fallback: 'style-loader',
     use: [
@@ -37,7 +37,6 @@ exports.devServer = function() {
 			historyApiFallback: true,
 			hot: true,
 			inline: true,
-			stats: 'errors-only',
 			contentBase: PATHS.src,
 		},
 		plugins: [
