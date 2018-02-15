@@ -3,6 +3,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PATHS = require('./webpack-paths');
 
 exports.loaderOptions = new webpack.LoaderOptionsPlugin({
   options: {
@@ -17,14 +19,19 @@ exports.environmentVariables = new webpack.DefinePlugin({
 });
 
 exports.uglifyJs = new webpack.optimize.UglifyJsPlugin({
-  output: {
-    comments: false,
-  },
-  compress: {
-    warnings: false,
-    drop_console: true,
-  },
+  uglifyOptions: {
+    mangle: false,
+    compress: false
+  }
 });
+
+exports.hotModuleReplacement = new webpack.HotModuleReplacementPlugin({
+    multistep: true
+  })
+
+exports.htmlWebpackPlugin = new HtmlWebpackPlugin({
+  template: PATHS.template,
+}),
 
 exports.extractText = (() => {
   const config = {

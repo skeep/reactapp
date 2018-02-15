@@ -1,12 +1,10 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 
 const PATHS = require('./webpack-paths');
 const loaders = require('./webpack-loaders');
 const plugins = require('./webpack-plugins');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const baseConfig = {
+const config = {
 	entry: ['babel-polyfill', PATHS.app],
 	output: {
 		path: PATHS.build,
@@ -28,40 +26,21 @@ const baseConfig = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: PATHS.template,
-    }),
+    plugins.htmlWebpackPlugin,
     plugins.extractText,
+    plugins.loaderOptions,
+    plugins.environmentVariables,
+    plugins.manifest,
+    plugins.sw,
+    plugins.copy,
+    plugins.hotModuleReplacement
   ],
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    contentBase: PATHS.src,
+  },
 };
-
-let config;
-switch (process.env.NODE_ENV) {
-	case 'production':
-		config = merge(
-		  baseConfig,
-      {
-        devtool: 'source-map',
-        plugins: [
-          plugins.loaderOptions,
-          plugins.environmentVariables,
-          plugins.uglifyJs,
-          plugins.manifest,
-          plugins.sw,
-          plugins.copy
-        ],
-      }
-	  );
-		break;
-	case 'dev':
-		config = merge(
-			baseConfig,
-      {
-        devtool: 'eval-source-map',
-      },
-			loaders.devServer()
-		);
-    break;
-}
 
 module.exports = config;

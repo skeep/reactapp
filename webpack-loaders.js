@@ -28,21 +28,7 @@ exports.extractCss = {
 exports.babel = {
   test: /\.jsx?$/,
   use: ['babel-loader'],
+  include: PATHS.src,
   exclude: /node_modules/,
 };
 
-exports.devServer = function() {
-	return {
-		devServer: {
-			historyApiFallback: true,
-			hot: true,
-			inline: true,
-			contentBase: PATHS.src,
-		},
-		plugins: [
-			new webpack.HotModuleReplacementPlugin({
-				multistep: true
-			})
-		],
-	};
-};
