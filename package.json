@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "snap": "jest --updateSnapshot",
-    "start": "NODE_ENV=dev webpack-dev-server",
-    "build": "rm -Rf build; NODE_ENV=production webpack",
+    "start": "webpack-dev-server",
+    "build": "rm -Rf build; webpack",
     "flow": "flow",
     "std": "standard --verbose | snazzy",
     "fmt": "prettier-standard 'src/**/*.js'",
@@ -64,8 +64,7 @@
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1",
-    "webpack-manifest-plugin": "^1.3.2",
-    "webpack-merge": "^4.1.1"
+    "webpack-manifest-plugin": "^1.3.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
