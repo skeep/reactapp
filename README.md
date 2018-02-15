@@ -47,7 +47,7 @@ Start [storybook](https://storybook.js.org/) server
 - [x] react-redux
 - [x] redux-devtools-extension
 - [x] standardjs and prettier
-- [ ] Offline first PWA
+- [x] Offline first PWA
 - [ ] Save redux state
 
 
