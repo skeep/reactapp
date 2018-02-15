@@ -4,6 +4,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PATHS = require('./webpack-paths');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 exports.loaderOptions = new webpack.LoaderOptionsPlugin({
   options: {
