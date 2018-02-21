@@ -1,55 +1,64 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const webpack = require('webpack');
+const merge = require('webpack-merge');
 
-const paths = {
-  BUILD: path.resolve(__dirname, 'build'),
-  SRC: path.resolve(__dirname, 'src'),
-  PUBLIC: 'https://localhost:5000/'
-}
+const PATHS = require('./config/webpack-paths');
+const loaders = require('./config/webpack-loaders');
+const plugins = require('./config/webpack-plugins');
 
-module.exports = {
-  entry: ['babel-polyfill', path.join(paths.SRC, 'app.js')],
-  output: {
-    path: paths.BUILD,
-    filename: '[name]-[hash].js'
+const baseConfig = {
+	entry: ['babel-polyfill', PATHS.app],
+	output: {
+		path: PATHS.build,
+		filename: 'bundle.js',
+	},
+	module: {
+    rules: [
+      loaders.babel,
+      loaders.extractCss
+    ],
+  },
+	resolve: {
+    alias: {
+      'Components': PATHS.components,
+      'Containers': PATHS.containers,
+      'Selectors': PATHS.selectors,
+      'Actions': PATHS.actions,
+    },
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(paths.SRC, 'index.html')
-    }),
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        mangle: false,
-        compress: false
-      }
-    }),
-    new SWPrecacheWebpackPlugin()
+    plugins.htmlWebpackPlugin,
+    plugins.extractText,
   ],
-  module: {
-    rules: [
+};
+
+let config;
+switch (process.env.NODE_ENV) {
+	case 'production':
+		config = merge(
+		  baseConfig,
       {
-        test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/,
-        use: [
-          'babel-loader'
-        ]
+        devtool: 'source-map',
+        plugins: [
+          plugins.loaderOptions,
+          plugins.environmentVariables,
+          plugins.uglifyJs,
+          plugins.manifest,
+          plugins.sw,
+          plugins.copy
+        ],
       }
-    ]
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-      'Components': path.resolve(__dirname, 'src/components/'),
-      'Containers': path.resolve(__dirname, 'src/containers/'),
-      'Selectors': path.resolve(__dirname, 'src/store/selectors'),
-      'Actions': path.resolve(__dirname, 'src/store/actions')
-    }
-  },
-  devServer: {
-    contentBase: paths.SRC,
-    historyApiFallback: true
-  }
+	  );
+		break;
+	case 'dev':
+		config = merge(
+			baseConfig,
+      {
+        devtool: 'eval-source-map',
+      },
+			loaders.devServer()
+		);
+    break;
 }
+
+module.exports = config;
