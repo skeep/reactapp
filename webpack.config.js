@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-const PATHS = require('./webpack-paths');
-const loaders = require('./webpack-loaders');
-const plugins = require('./webpack-plugins');
+const PATHS = require('./config/webpack-paths');
+const loaders = require('./config/webpack-loaders');
+const plugins = require('./config/webpack-plugins');
 
 const baseConfig = {
 	entry: ['babel-polyfill', PATHS.app],
